@@ -38,4 +38,8 @@ public class DepartmentController {
         return departmentService.updateDepartmentById(departmentId,department);
     }
 
+    @GetMapping(value = "/departments/name/{name}")
+    public Department fetchDepartmentByName(@PathVariable("name") String departmentName){
+        return departmentService.fetchDepartmentByName(departmentName);
+    }
 }
