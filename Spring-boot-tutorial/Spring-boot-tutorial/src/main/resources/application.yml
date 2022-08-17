@@ -1,0 +1,50 @@
+spring:
+  profiles:
+    active: dev
+---
+
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/ashdb
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+---
+
+spring:
+  profiles: qa
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/ashdb-qa
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
+---
+
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/ashdb-prod
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
